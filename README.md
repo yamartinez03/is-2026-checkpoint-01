@@ -31,7 +31,7 @@ Aplicación web que muestra los integrantes del equipo y la feature que implemen
 
 - **Database** — PostgreSQL 16 sin puerto público. Almacena los datos del equipo en la tabla `members`.
 
-- **Portainer** — Panel de monitoreo Docker en `localhost:9000`. Permite ver el estado de todos los contenedores, los logs de cada servicio y monitorear el uso de CPU y memoria, sin necesidad de usar la terminal.
+- **Portainer** — Panel de monitoreo Docker en `localhost:9000`. Permite ver el estado de todos los contenedores, los logs de cada servicio y monitorear el uso de CPU y memoria, sin necesidad de usar la terminal. La primera vez que se accede solicita crear un usuario administrador.
 
 ## Instalación y uso
 

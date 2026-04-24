@@ -16,8 +16,8 @@ Aplicación web que muestra los integrantes del equipo y la feature que implemen
 |--------|------------|----------|
 | F01 - Coordinación | Yanina Fátima Ester Martinez | compose |
 | F02 - Frontend | Dana Natasha Cadabon | frontend |
-| F03 - Backend | Sofia Lindon | backend |
-| F04 - Database | Yael Noemi Pilar Luque | database |
+| F03 - Backend | Yael Noemi Pilar Luque | backend |
+| F04 - Database | Sofia Lindon | database |
 | F05 - Portainer | Yanina Fátima Ester Martinez | portainer |
 
 ## Servicios

@@ -1,5 +1,5 @@
 # TeamBoard App - IS-2026 Checkpoint 01
-Aplicación web que muestra los integrantes del quipo y la feature que implementó cada uno.
+Aplicación web que muestra los integrantes del equipo y la feature que implementó cada uno.
 
 ## Integrantes
 

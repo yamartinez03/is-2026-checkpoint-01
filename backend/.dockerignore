@@ -1,0 +1,23 @@
+# --- SEGURIDAD (Lo más importante) ---
+# Nunca copies el archivo .env adentro del contenedor, 
+# porque contendría las contraseñas de tu DB.
+.env
+
+# --- ARCHIVOS TEMPORALES Y DE SISTEMA ---
+# Python genera estas carpetas al compilar y no sirven en producción.
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- CARPETAS DE DESARROLLO ---
+# No queremos copiar el historial de Git ni el entorno virtual.
+.git/
+.gitignore
+venv/
+env/
+.venv/
+
+# --- COSAS DEL EDITOR ---
+.vscode/
+.idea/

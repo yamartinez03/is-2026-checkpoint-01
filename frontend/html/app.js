@@ -35,7 +35,7 @@ async function loadData() {
         const healthData = await fetchHealth();
         const normalizedHealth = String(healthData.status || "").toLowerCase();
 
-        if (normalizedHealth === "ok") {
+        if (normalizedHealth === "ok" || normalizedHealth === "active") {
             setBackendStatus("ok", "OK");
         } else {
             setBackendStatus("unknown", healthData.status || "Desconocido");
@@ -49,11 +49,11 @@ async function loadData() {
             const row = document.createElement("tr");
 
             row.innerHTML = `
-                <td>${member.nombre} ${member.apellido}</td>
-                <td>${member.legajo}</td>
-                <td>${member.feature}</td>
-                <td>${member.servicio}</td>
-                <td>${member.estado}</td>
+                <td>${member[1]} ${member[2]}</td>
+                <td>${member[3]}</td>
+                <td>${member[4]}</td>
+                <td>${member[5]}</td>
+                <td>${member[6]}</td>
             `;
 
             tableBody.appendChild(row);

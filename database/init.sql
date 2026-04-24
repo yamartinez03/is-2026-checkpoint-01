@@ -13,5 +13,5 @@ INSERT INTO members (nombre, apellido, legajo, feature, servicio, estado) VALUES
 ('Yanina Fatima Ester', 'Martinez', '34795', 'Feature 01', 'Coordinación', 'Completo'),
 ('Dana Natasha', 'Cadabon', '31001', 'Feature 02', 'Frontend', 'Completo'),
 ('Yael Noemi', 'Pilar Luque', '31486', 'Feature 03', 'Backend', 'Completo'),
-('Sofia', 'Lindon', '31058', 'Feature 04', 'Base de Datos', 'Completo');
-('Yanina Fatima Ester', 'Martinez', '34795', 'Feature 05', 'Portainer', 'Completo')
+('Sofia', 'Lindon', '31058', 'Feature 04', 'Base de Datos', 'Completo'),
+('Yanina Fatima Ester', 'Martinez', '34795', 'Feature 05', 'Portainer', 'Completo');

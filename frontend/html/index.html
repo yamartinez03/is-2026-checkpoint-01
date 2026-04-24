@@ -1,14 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TeamBoard App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-1: #f6f7fb;
+            --bg-2: #eef2f8;
+            --surface: #ffffff;
+            --surface-border: #dbe3ef;
+            --text: #1f2a37;
+            --muted: #5b6b7c;
+            --accent: #0f766e;
+            --accent-soft: #ccfbf1;
+            --shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Manrope", "Segoe UI", sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 10% 10%, #dbeafe 0%, transparent 42%),
+                radial-gradient(circle at 85% 20%, #dcfce7 0%, transparent 34%),
+                linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+            display: grid;
+            place-items: center;
+            padding: 2rem 1rem;
+        }
+
+        main {
+            width: min(960px, 100%);
+            background: var(--surface);
+            border: 1px solid var(--surface-border);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            padding: 1.75rem;
+        }
+
+        h1 {
+            margin: 0 0 0.55rem;
+            font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            margin: 0.45rem 0;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        #backend-status {
+            display: inline-block;
+            margin-left: 0.3rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #475569;
+            background: #e2e8f0;
+        }
+
+        #backend-status.unknown {
+            color: #475569;
+            background: #e2e8f0;
+        }
+
+        #backend-status.ok {
+            color: #146c2e;
+            background: #d9f7df;
+        }
+
+        #backend-status.error {
+            color: #9b1c1c;
+            background: #ffdada;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 1.15rem;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid var(--surface-border);
+        }
+
+        thead {
+            background: #f3f6fb;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 0.85rem 0.9rem;
+            border-bottom: 1px solid #e6edf6;
+            font-size: 0.95rem;
+        }
+
+        th {
+            color: #334155;
+            font-weight: 700;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background: #f8fafc;
+        }
+
+        @media (max-width: 700px) {
+            main {
+                padding: 1rem;
+                border-radius: 14px;
+            }
+
+            th,
+            td {
+                padding: 0.65rem;
+                font-size: 0.88rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <main>
         <h1>Bienvenido a TeamBoard App</h1>
         <p>Esta es la página de inicio de la aplicación TeamBoard.</p>
-        <p>El backend se encuentra: <span id="backend-status">Estado Desconocido</span></p>
+        <p>Estado del backend: <span id="backend-status" class="unknown">Desconocido</span></p>
         <table>
             <thead>
                 <tr>
@@ -26,4 +157,5 @@
     </main>
     <script src="app.js"></script>
 </body>
+
 </html>

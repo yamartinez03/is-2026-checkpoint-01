@@ -4,6 +4,12 @@ const tableBody = document.getElementById("table-body");
 
 const status = document.getElementById("backend-status");
 
+function setBackendStatus(state, message) {
+    status.classList.remove("unknown", "ok", "error");
+    status.classList.add(state);
+    status.textContent = message;
+}
+
 // Función para cargar los datos del equipo y el estado del backend
 async function fetchTeam() {
     const response = await fetch(`${API_URL}/api/team`);
@@ -24,10 +30,16 @@ async function fetchHealth() {
 //funcion para cargar dinámicamente los miembros desde el backend 
 async function loadData() {
     try {
-        const teamData = await fetchTeam();
+        setBackendStatus("unknown", "Verificando...");
+
         const healthData = await fetchHealth();
-        status.textContent = `Backend: ${healthData.status} | Database: ${healthData.database}`;
-        status.classList.add("ok");
+        const normalizedHealth = String(healthData.status || "").toLowerCase();
+
+        if (normalizedHealth === "ok") {
+            setBackendStatus("ok", "OK");
+        } else {
+            setBackendStatus("unknown", healthData.status || "Desconocido");
+        }
 
         const members = await fetchTeam();
 
@@ -41,16 +53,16 @@ async function loadData() {
                 <td>${member.legajo}</td>
                 <td>${member.feature}</td>
                 <td>${member.servicio}</td>
+                <td>${member.estado}</td>
             `;
 
             tableBody.appendChild(row);
         });
 
     } catch (error) {
-        status.textContent = "Backend o base de datos no disponible";
-        status.classList.add("error");
+        setBackendStatus("error", "No disponible");
         console.error(error);
     }
 }
 
-loadPage();
+loadData();

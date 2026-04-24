@@ -6,4 +6,4 @@ COPY html/ /app/
 
 EXPOSE 8080
 
-CMD ["python3", "-m", "http.server", "8080s"]
+CMD ["python3", "-m", "http.server", "8080"]

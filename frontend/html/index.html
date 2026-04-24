@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,8 +67,23 @@
             border-radius: 999px;
             font-size: 0.9rem;
             font-weight: 600;
-            color: var(--accent);
-            background: var(--accent-soft);
+            color: #475569;
+            background: #e2e8f0;
+        }
+
+        #backend-status.unknown {
+            color: #475569;
+            background: #e2e8f0;
+        }
+
+        #backend-status.ok {
+            color: #146c2e;
+            background: #d9f7df;
+        }
+
+        #backend-status.error {
+            color: #9b1c1c;
+            background: #ffdada;
         }
 
         table {
@@ -118,11 +134,12 @@
         }
     </style>
 </head>
+
 <body>
     <main>
         <h1>Bienvenido a TeamBoard App</h1>
         <p>Esta es la página de inicio de la aplicación TeamBoard.</p>
-        <p>El backend se encuentra: <span id="backend-status">Estado Desconocido</span></p>
+        <p>Estado del backend: <span id="backend-status" class="unknown">Desconocido</span></p>
         <table>
             <thead>
                 <tr>
@@ -140,4 +157,5 @@
     </main>
     <script src="app.js"></script>
 </body>
+
 </html>
